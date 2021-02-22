@@ -1,11 +1,6 @@
 import NextLink from "next/link"
 import { Flex, Spacer, Box, Heading, Container, Center, Text } from "@chakra-ui/react"
-import ModeSwitch from "../shared/ModeSwitch"
-
-const linkPages = [
-   { name: "Home", href: "#" },
-   { name: "About", href: "#" },
-]
+import Nav from "./Nav"
 
 export default function Header() {
    return (
@@ -20,19 +15,7 @@ export default function Header() {
 
                <Spacer />
 
-               <Flex>
-                  <Center>
-                     {linkPages.map((page) => (
-                        <Text key={page.name} as="a" mx="3">
-                           <NextLink href={page.href}>
-                              <a>{page.name}</a>
-                           </NextLink>
-                        </Text>
-                     ))}
-
-                     <ModeSwitch />
-                  </Center>
-               </Flex>
+               <Nav />
             </Flex>
          </Container>
       </header>

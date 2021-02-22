@@ -7,7 +7,7 @@ export default function ModeSwitch() {
    return (
       <IconButton
          mx="2"
-         borderRadius="100%"
+         fontSize="2xl"
          variant="ghost"
          aria-label="Toggle Theme Mode"
          onClick={toggleColorMode}

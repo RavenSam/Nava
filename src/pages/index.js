@@ -1,4 +1,4 @@
-import { Container, Heading, Stack, Button, Flex } from "@chakra-ui/react"
+import { Container, Heading, Stack, Button, Flex, Text } from "@chakra-ui/react"
 import Head from "next/head"
 
 export default function Home() {
@@ -11,7 +11,9 @@ export default function Home() {
          <Container maxWidth="container.md">
             <Stack height="80vh" justifyContent="center">
                <Heading
-                  fontSize={{ base: "30px", md: "45px", lg: "55px" }}
+                  bgGradient="linear(to-l, #7928CA,#FF0080)"
+                  bgClip="text"
+                  fontSize={{ base: "35px", md: "50px", lg: "60px" }}
                   textAlign="center"
                   py="5"
                   letterSpacing="wider"
