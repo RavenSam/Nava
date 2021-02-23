@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Center, Text, LinkOverlay } from "@chakra-ui/react"
+import { Box, Center, Text, Button } from "@chakra-ui/react"
 
 import NextLink from "next/link"
 
@@ -15,14 +15,20 @@ export default function Nav() {
          <Center>
             <Box display={{ base: "none", md: "flex" }} alignItems="center" justifyContent="center">
                {linkPages.map((page) => (
-                  <Text key={page.name} mx="3">
-                     <NextLink href={page.href}>
-                        <a>{page.name}</a>
-                     </NextLink>
-                  </Text>
+                  <NextLink key={page.name} href={page.href}>
+                     <a>
+                        <Text key={page.name} p="3" fontWeight="600" fontSize=".9rem" _hover={{ color: "primary.400" }}>
+                           {page.name}
+                        </Text>
+                     </a>
+                  </NextLink>
                ))}
 
                <ModeSwitch />
+
+               <Button fontSize=".9rem" size="sm">
+                  Login
+               </Button>
             </Box>
 
             <Box display={{ sm: "block", md: "none" }}>

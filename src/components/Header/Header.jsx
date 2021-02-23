@@ -1,11 +1,11 @@
 import NextLink from "next/link"
-import { Flex, Spacer, Box, Heading, Container, Center, Text } from "@chakra-ui/react"
+import { Flex, Spacer, Box, Heading, Container } from "@chakra-ui/react"
 import Nav from "./Nav"
 
 export default function Header() {
    return (
-      <header>
-         <Container py="4" maxWidth="container.lg">
+      <Box w="100%" py={{ base: "3", md: "4" }} boxShadow="md">
+         <Container maxWidth="container.lg">
             <Flex>
                <Box className="logo">
                   <Heading size="lg" letterSpacing="wide">
@@ -18,6 +18,6 @@ export default function Header() {
                <Nav />
             </Flex>
          </Container>
-      </header>
+      </Box>
    )
 }

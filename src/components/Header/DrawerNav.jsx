@@ -8,8 +8,10 @@ import {
    DrawerFooter,
    IconButton,
    DrawerOverlay,
+   DrawerHeader,
    DrawerContent,
    DrawerCloseButton,
+   Button,
    Divider,
    Center,
    Text,
@@ -29,17 +31,34 @@ export default function DrawerNav() {
          <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
             <DrawerOverlay>
                <DrawerContent>
-                  <DrawerCloseButton my="4" />
+                  <DrawerCloseButton my="10px" />
+
+                  <DrawerHeader pt="3.5rem">
+                     <Divider mb="1rem" />
+                     <Button fontSize=".9rem" size="sm">
+                        Login
+                     </Button>
+                  </DrawerHeader>
 
                   <DrawerBody>
                      <Center flexDirection="column" height="100%">
                         {linkPages.map((page) => (
                            <React.Fragment key={page.name}>
-                              <Text mx="3" py="3" fontSize="18px" fontWeight="600" letterSpacing="1.5px" w="100%">
-                                 <NextLink href={page.href}>
-                                    <a>{page.name}</a>
-                                 </NextLink>
-                              </Text>
+                              <NextLink href={page.href}>
+                                 <a style={{ width: "100%" }}>
+                                    <Text
+                                       p="3"
+                                       fontSize="18px"
+                                       fontWeight="600"
+                                       letterSpacing="1.5px"
+                                       w="100%"
+                                       borderLeft="3px solid transparent"
+                                       _hover={{ color: "primary.400", borderLeftColor: "primary.400" }}
+                                    >
+                                       {page.name}
+                                    </Text>
+                                 </a>
+                              </NextLink>
                               <Divider />
                            </React.Fragment>
                         ))}

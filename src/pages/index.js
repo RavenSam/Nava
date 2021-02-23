@@ -1,13 +1,8 @@
 import { Container, Heading, Stack, Button, Flex, Text } from "@chakra-ui/react"
-import Head from "next/head"
 
 export default function Home() {
    return (
       <>
-         <Head>
-            <title>Home Page</title>
-         </Head>
-
          <Container maxWidth="container.md">
             <Stack height="80vh" justifyContent="center">
                <Heading
@@ -31,3 +26,5 @@ export default function Home() {
       </>
    )
 }
+
+Home.title = "Home Page"
