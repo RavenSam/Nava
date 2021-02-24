@@ -1,15 +1,8 @@
-import { useState } from "react"
 import { useRouter } from "next/router"
+import NextLink from "next/link"
 import { Button, Stack } from "@chakra-ui/react"
-import { ArrowUpDownIcon } from "@chakra-ui/icons"
 
-const menuItems = [
-   { name: "All Films", icon: ArrowUpDownIcon, href: "/movies" },
-   { name: "Series", icon: ArrowUpDownIcon, href: "/" },
-   { name: "Featured", icon: ArrowUpDownIcon, href: "/" },
-   { name: "Documents", icon: ArrowUpDownIcon, href: "/" },
-   { name: "Tv Shows", icon: ArrowUpDownIcon, href: "/" },
-]
+import { menuItems } from "../config/menuItems"
 
 export default function Menu() {
    const path = useRouter().pathname
@@ -28,9 +21,13 @@ export default function Menu() {
       <>
          <Stack>
             {menuItems.map((El) => (
-               <Button {...buttonProps} isActive={El.href === path} leftIcon={<El.icon d="block" />}>
-                  {El.name}
-               </Button>
+               <NextLink key={El.name} href={El.href}>
+                  <a>
+                     <Button {...buttonProps} isActive={El.href === path} w="100%" leftIcon={<El.icon d="block" />}>
+                        {El.name}
+                     </Button>
+                  </a>
+               </NextLink>
             ))}
          </Stack>
       </>

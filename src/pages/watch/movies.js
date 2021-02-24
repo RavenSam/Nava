@@ -1,10 +1,11 @@
 import React from "react"
+import { Heading } from "@chakra-ui/react"
 import MoviesLayout from "../../layouts/MoviesLayout"
 
 export default function Movies() {
    return (
       <>
-         <h1>All Movies</h1>
+         <Heading as="h2">All Movies</Heading>
       </>
    )
 }

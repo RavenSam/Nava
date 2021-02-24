@@ -22,7 +22,7 @@ import {
 } from "@chakra-ui/react"
 import { SearchIcon } from "@chakra-ui/icons"
 
-import { linkPages } from "./linkPages"
+import { linkPages } from "../../config/linkPages"
 
 export default function DrawerNav() {
    const { isOpen, onOpen, onClose } = useDisclosure()

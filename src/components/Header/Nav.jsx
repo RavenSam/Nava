@@ -7,7 +7,7 @@ import ModeSwitch from "../shared/ModeSwitch"
 
 import DrawerNav from "./DrawerNav"
 
-import { linkPages } from "./linkPages"
+import { linkPages } from "../../config/linkPages"
 
 export default function Nav() {
    return (
