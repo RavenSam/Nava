@@ -1,5 +1,16 @@
-import NextLink from "next/link"
-import { Flex, Spacer, Box, Heading, Container } from "@chakra-ui/react"
+import {
+   Flex,
+   Spacer,
+   Box,
+   Heading,
+   Container,
+   InputGroup,
+   Input,
+   Button,
+   InputRightElement,
+   IconButton,
+} from "@chakra-ui/react"
+import { SearchIcon } from "@chakra-ui/icons"
 import Nav from "./Nav"
 
 export default function Header() {
@@ -12,6 +23,13 @@ export default function Header() {
                      NAVA
                   </Heading>
                </Box>
+
+               <InputGroup size="md" mx="4" maxW="2xs" display={{ base: "none", md: "flex" }}>
+                  <Input placeholder="Search" borderRadius="20px" _focus={{ borderColor: "primary.400" }} />
+                  <InputRightElement>
+                     <IconButton size="md" icon={<SearchIcon />} borderRadius="0 20px 20px 0" />
+                  </InputRightElement>
+               </InputGroup>
 
                <Spacer />
 

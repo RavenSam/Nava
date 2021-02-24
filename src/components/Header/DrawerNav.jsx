@@ -16,7 +16,11 @@ import {
    Center,
    Text,
    useDisclosure,
+   InputGroup,
+   Input,
+   InputRightElement,
 } from "@chakra-ui/react"
+import { SearchIcon } from "@chakra-ui/icons"
 
 import { linkPages } from "./linkPages"
 
@@ -34,10 +38,12 @@ export default function DrawerNav() {
                   <DrawerCloseButton my="10px" />
 
                   <DrawerHeader pt="3.5rem">
-                     <Divider mb="1rem" />
-                     <Button fontSize=".9rem" size="sm">
-                        Login
-                     </Button>
+                     <InputGroup size="md" my="3">
+                        <Input placeholder="Search" borderRadius="20px" _focus={{ borderColor: "primary.400" }} />
+                        <InputRightElement>
+                           <IconButton size="md" icon={<SearchIcon />} borderRadius="0 20px 20px 0" />
+                        </InputRightElement>
+                     </InputGroup>
                   </DrawerHeader>
 
                   <DrawerBody>

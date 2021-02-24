@@ -25,10 +25,6 @@ export default function Nav() {
                ))}
 
                <ModeSwitch />
-
-               <Button fontSize=".9rem" size="sm">
-                  Login
-               </Button>
             </Box>
 
             <Box display={{ sm: "block", md: "none" }}>

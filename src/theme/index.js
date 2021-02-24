@@ -1,5 +1,4 @@
 import { extendTheme } from "@chakra-ui/react"
-
 import { purple, indigo } from "./colors"
 import { Button } from "./components"
 import { fonts } from "./fonts"

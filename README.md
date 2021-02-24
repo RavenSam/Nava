@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project with [`Chakra-ui`](https://chakra-ui.com).
+This is a [Next.js](https://nextjs.org/) project with [Chakra-ui](https://chakra-ui.com).
 
 ## Getting Started
 
