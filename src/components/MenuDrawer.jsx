@@ -2,7 +2,6 @@ import React from "react"
 import {
    Drawer,
    DrawerBody,
-   DrawerFooter,
    DrawerHeader,
    DrawerOverlay,
    DrawerContent,
@@ -11,7 +10,7 @@ import {
    IconButton,
    Button,
 } from "@chakra-ui/react"
-import { ArrowRightIcon } from "@chakra-ui/icons"
+import { MenuAlt1Outline } from "heroicons-react"
 import Menu from "./Menu"
 
 export default function MenuDrawer() {
@@ -25,7 +24,7 @@ export default function MenuDrawer() {
             variant="ghost"
             aria-label="Toggle Theme Mode"
             onClick={onOpen}
-            icon={<ArrowRightIcon />}
+            icon={<MenuAlt1Outline />}
          />
 
          <Drawer isOpen={isOpen} placement="bottom" onClose={onClose} finalFocusRef={btnRef}>

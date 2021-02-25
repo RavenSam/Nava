@@ -4,7 +4,6 @@ import { Button } from "./components"
 import { fonts } from "./fonts"
 
 const primary = purple
-
 export const theme = extendTheme({
    colors: {
       primary,

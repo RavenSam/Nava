@@ -12,7 +12,7 @@ export default function Menu() {
       variant: "ghost",
       fontSize: "1rem",
       textTransform: "capitalize",
-      fontWeight: "400",
+      fontWeight: "500",
       justifyContent: "end",
       fontSize: ".9rem",
    }

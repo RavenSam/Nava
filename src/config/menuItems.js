@@ -1,9 +1,9 @@
-import { ArrowUpDownIcon } from "@chakra-ui/icons"
+import { FilmOutline, HomeOutline, DesktopComputerOutline, GlobeAltOutline, FireOutline } from "heroicons-react"
 
 export const menuItems = [
-   { name: "All Films", icon: ArrowUpDownIcon, href: "/watch/movies" },
-   { name: "Series", icon: ArrowUpDownIcon, href: "/watch/series" },
-   { name: "Featured", icon: ArrowUpDownIcon, href: "/" },
-   { name: "Documents", icon: ArrowUpDownIcon, href: "/" },
-   { name: "Tv Shows", icon: ArrowUpDownIcon, href: "/" },
+   { name: "All Films", icon: HomeOutline, href: "/watch/movies" },
+   { name: "Series", icon: FilmOutline, href: "/watch/series" },
+   { name: "Tv Shows", icon: DesktopComputerOutline, href: "/" },
+   { name: "Featured", icon: FireOutline, href: "/" },
+   { name: "Documents", icon: GlobeAltOutline, href: "/" },
 ]

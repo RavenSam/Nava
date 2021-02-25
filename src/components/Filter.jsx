@@ -1,13 +1,26 @@
-import React from "react"
 import { useRouter } from "next/router"
-import { Flex, Spacer, Box, Menu, MenuButton, Button, MenuList, MenuItem, Heading } from "@chakra-ui/react"
+import {
+   Flex,
+   Spacer,
+   Box,
+   Menu,
+   MenuButton,
+   Button,
+   MenuList,
+   MenuItem,
+   Heading,
+   MenuOptionGroup,
+   MenuItemOption,
+} from "@chakra-ui/react"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 
 import MenuDrawer from "../components/MenuDrawer"
 
-export default function Filter({}) {
+export default function Filter({ sortBy, setSortBy }) {
    const path = useRouter().pathname
    const heading = path.split("/")[2]
+
+   const handleChange = (e) => setSortBy(e)
 
    const menuButtonProps = {
       variant: "ghost",
@@ -18,7 +31,7 @@ export default function Filter({}) {
 
    return (
       <Flex
-         my="5"
+         my="3"
          px={{ base: "1rem", md: "2rem" }}
          direction={{ base: "column", md: "row" }}
          alignItems={{ md: "center" }}
@@ -38,11 +51,14 @@ export default function Filter({}) {
 
             <Menu>
                <MenuButton {...menuButtonProps} as={Button} rightIcon={<ChevronDownIcon />}>
-                  Sort by
+                  Sort By
                </MenuButton>
+
                <MenuList>
-                  <MenuItem>Popular</MenuItem>
-                  <MenuItem>New</MenuItem>
+                  <MenuOptionGroup onChange={handleChange} defaultValue={sortBy} title="Sort By" type="radio">
+                     <MenuItemOption value="release_date.desc">New</MenuItemOption>
+                     <MenuItemOption value="popularity.desc">Popular</MenuItemOption>
+                  </MenuOptionGroup>
                </MenuList>
             </Menu>
          </Flex>
