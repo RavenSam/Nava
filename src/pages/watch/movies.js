@@ -6,8 +6,10 @@ import Loading from "../../components/shared/Loading"
 
 // Dummy data
 import { results as movies } from "../../../movie.json"
+import GridPosts from "../../components/shared/GridPosts"
+import ListPosts from "../../components/shared/ListPosts"
 
-export default function Movies({ sortBy, load, setLoad }) {
+export default function Movies({ sortBy, load, setLoad, viewGrid }) {
    // const [movies, setMovies] = useState([])
 
    // useEffect(async () => {
@@ -28,17 +30,7 @@ export default function Movies({ sortBy, load, setLoad }) {
 
    if (load) return <Loading />
 
-   return (
-      <>
-         <SimpleGrid columns={[2, null, 3]} spacing={[".5rem", "1rem"]}>
-            {movies.map((movie) => (
-               <Box rounded="lg" overflow="hidden" key={movie.id} bg="tomato" minHeight="200px">
-                  <Image minWidth="100%" minHeight="100%" src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
-               </Box>
-            ))}
-         </SimpleGrid>
-      </>
-   )
+   return <>{viewGrid ? <GridPosts posts={movies} /> : <ListPosts posts={movies} />}</>
 }
 
 Movies.title = "All Movies"

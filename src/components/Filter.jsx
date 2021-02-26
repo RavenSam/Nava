@@ -7,20 +7,23 @@ import {
    MenuButton,
    Button,
    MenuList,
-   MenuItem,
+   IconButton,
    Heading,
    MenuOptionGroup,
    MenuItemOption,
 } from "@chakra-ui/react"
 import { ChevronDownIcon } from "@chakra-ui/icons"
+import { ViewGridOutline, ViewListOutline } from "heroicons-react"
 
 import MenuDrawer from "../components/MenuDrawer"
 
-export default function Filter({ sortBy, setSortBy }) {
+export default function Filter({ sortBy, setSortBy, viewGrid, setViewGrid }) {
    const path = useRouter().pathname
    const heading = path.split("/")[2]
 
    const handleChange = (e) => setSortBy(e)
+
+   const handleDisplay = () => setViewGrid(!viewGrid)
 
    const menuButtonProps = {
       variant: "ghost",
@@ -61,6 +64,14 @@ export default function Filter({ sortBy, setSortBy }) {
                   </MenuOptionGroup>
                </MenuList>
             </Menu>
+
+            <IconButton
+               ml="1rem"
+               variant="ghost"
+               aria-label="Toggle Post Display"
+               onClick={handleDisplay}
+               icon={viewGrid ? <ViewListOutline /> : <ViewGridOutline />}
+            />
          </Flex>
       </Flex>
    )
