@@ -19,7 +19,7 @@ export default function Header() {
    const { colorMode } = useColorMode()
 
    return (
-      <Box w="100%" py={{ base: "3", md: "4" }} boxShadow="md">
+      <Box w="100%" py={{ base: "3", md: "4" }} boxShadow="sm">
          <Container maxWidth="container.lg">
             <Flex align="center">
                <NextLink href="/">
@@ -31,7 +31,7 @@ export default function Header() {
                <InputGroup size="md" mx="4" maxW="2xs" display={{ base: "none", md: "flex" }}>
                   <Input placeholder="Search" borderRadius="20px" _focus={{ borderColor: "primary.400" }} />
                   <InputRightElement>
-                     <IconButton size="md" icon={<SearchIcon />} borderRadius="0 20px 20px 0" />
+                     <IconButton size="md" icon={<SearchIcon />} aria-label="Search" borderRadius="0 20px 20px 0" />
                   </InputRightElement>
                </InputGroup>
 

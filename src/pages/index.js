@@ -1,9 +1,12 @@
 import HeroCarousel from "../components/sections/HeroCarousel"
 
+// Dummy data
+import { results } from "../../movie.json"
+
 export default function Home() {
    return (
       <>
-         <HeroCarousel />
+         <HeroCarousel posts={results.slice(0, 5)} />
       </>
    )
 }

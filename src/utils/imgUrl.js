@@ -11,6 +11,9 @@ export default function imgUrl(path, width = 300) {
    }
 
    if (path.indexOf("/") === 0) {
+      if (width === "original") {
+         return `https://image.tmdb.org/t/p/${width}${path}`
+      }
       return `https://image.tmdb.org/t/p/w${width}${path}` // If path don't contain the domain
    }
 

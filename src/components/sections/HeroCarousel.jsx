@@ -1,26 +1,19 @@
-import { Flex, Spacer, Box } from "@chakra-ui/react"
+import { Flex, Spacer, Box, Text, Heading } from "@chakra-ui/react"
 
 import Slider from "../shared/Slider"
+import imgUrl from "../../utils/imgUrl"
 
-export default function HeroCarousel() {
+export default function HeroCarousel({ posts = [] }) {
    return (
-      <Box my="1rem">
+      <Box {...heroProps().container}>
          <Slider sliderProps={sliderProps()}>
-            <Box bg="tomato" w="100%" h="300px" p={4} color="white" className="item" data-value="1">
-               This is the Box 1
-            </Box>
-
-            <Box bg="green" w="100%" h="300px" p={4} color="white" className="item" data-value="1">
-               This is the Box 2
-            </Box>
-
-            <Box bg="red" w="100%" h="300px" p={4} color="white" className="item" data-value="1">
-               This is the Box 3
-            </Box>
-
-            <Box bg="blue" w="100%" h="300px" p={4} color="white" className="item" data-value="1">
-               This is the Box 4
-            </Box>
+            {posts.map((post) => (
+               <Box key={post.id} bg={`url(${imgUrl(post.backdrop_path, "original")})`} {...heroProps().item}>
+                  <Box {...heroProps().content}>
+                     <Heading as="h2">Welcome</Heading>
+                  </Box>
+               </Box>
+            ))}
          </Slider>
       </Box>
    )
@@ -34,4 +27,38 @@ const sliderProps = () => {
       infinite: true,
       mouseTracking: true,
    }
+}
+
+// Chakra props style
+const heroProps = () => {
+   const container = {}
+
+   const item = {
+      h: ["85vh"],
+      w: "100%",
+      color: "white",
+      className: "item",
+      p: "4",
+      bgSize: "cover",
+      bgPosition: "center",
+      bgRepeat: "no-repeat",
+      pos: "relative",
+
+      _before: {
+         content: '""',
+         pos: "absolute",
+         top: 0,
+         left: 0,
+         bg: "rgba(0,0,0,.5)",
+         width: "100%",
+         height: "100%",
+      },
+   }
+
+   const content = {
+      zIndex: 2,
+      pos: "relative",
+   }
+
+   return { container, item, content }
 }

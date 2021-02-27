@@ -8,7 +8,7 @@ import Filter from "../components/Filter"
 export default function MoviesLayout({ children }) {
    const [sortBy, setSortBy] = useState("release_date.desc")
    const [load, setLoad] = useState(false)
-   const [viewGrid, setViewGrid] = useState(false)
+   const [viewGrid, setViewGrid] = useState(true)
 
    const customProps = { sortBy, setSortBy, load, setLoad, viewGrid }
 
