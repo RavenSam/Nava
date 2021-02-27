@@ -1,28 +1,32 @@
+import NextLink from "next/link"
 import {
    Flex,
    Spacer,
    Box,
-   Heading,
    Container,
    InputGroup,
    Input,
-   Button,
    InputRightElement,
    IconButton,
+   Image,
+   useColorMode,
 } from "@chakra-ui/react"
 import { SearchIcon } from "@chakra-ui/icons"
 import Nav from "./Nav"
+import site from "../../config/site"
 
 export default function Header() {
+   const { colorMode } = useColorMode()
+
    return (
       <Box w="100%" py={{ base: "3", md: "4" }} boxShadow="md">
          <Container maxWidth="container.lg">
-            <Flex>
-               <Box className="logo">
-                  <Heading size="lg" letterSpacing="wide">
-                     NAVA
-                  </Heading>
-               </Box>
+            <Flex align="center">
+               <NextLink href="/">
+                  <a>
+                     <Image src={colorMode === "dark" ? site.logo.light : site.logo.dark} h="30px" />
+                  </a>
+               </NextLink>
 
                <InputGroup size="md" mx="4" maxW="2xs" display={{ base: "none", md: "flex" }}>
                   <Input placeholder="Search" borderRadius="20px" _focus={{ borderColor: "primary.400" }} />

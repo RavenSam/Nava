@@ -1,4 +1,4 @@
-export default function excerpt(text, char = 100) {
+export default function excerpt(text, char = 90) {
    if (text.length > char) {
       return text.substr(0, text.lastIndexOf(" ", char)) + "..."
    }

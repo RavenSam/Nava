@@ -13,11 +13,11 @@ export default function ListPosts({ posts = [] }) {
          {posts.map((post) => (
             <Link href="#">
                <a className="card">
-                  <Box key={post.id} {...postProps().card}>
+                  <Flex key={post.id} {...postProps().card}>
                      <Image {...postProps().img} src={imgUrls(post.poster_path)} />
 
                      <Box {...postProps().content}>
-                        <Heading as="h2" fontSize={[".9rem", null, "1rem"]} maxW="80%" mb="2">
+                        <Heading as="h2" fontSize={[".9rem", null, "1rem"]} mb="2">
                            {post.title}
                         </Heading>
 
@@ -34,12 +34,12 @@ export default function ListPosts({ posts = [] }) {
                            {`${post.vote_average}/10`}
                         </Text>
 
-                        <Text d={["none", "block"]} as="p" fontSize="13px" maxW="70%" fontWeight="500">
+                        <Text d={["none", "block"]} as="p" fontSize="13px" fontWeight="500">
                            <strong>Synopsis: </strong>
                            {excerpt(post.overview)}
                         </Text>
                      </Box>
-                  </Box>
+                  </Flex>
                </a>
             </Link>
          ))}
@@ -50,22 +50,20 @@ export default function ListPosts({ posts = [] }) {
 // Chakra props style
 const postProps = () => {
    const card = {
-      display: "-webkit-box",
       borderRadius: "md",
       overflow: "hidden",
       boxShadow: "md",
-      h: "180px",
-      maxW: "500px",
-      mx: "auto",
+      h: ["140px", "180px"],
    }
 
    const img = {
       h: "100%",
-      w: "150px",
+      w: ["120px", "150px"],
    }
 
    const content = {
       p: "1rem",
+      flex: "1",
    }
 
    return { card, img, content }

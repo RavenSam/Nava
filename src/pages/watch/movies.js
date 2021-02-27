@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react"
-import { Heading, SimpleGrid, Box, Image } from "@chakra-ui/react"
 import MoviesLayout from "../../layouts/MoviesLayout"
 import axios from "axios"
 import Loading from "../../components/shared/Loading"
 
 // Dummy data
 import { results as movies } from "../../../movie.json"
-import GridPosts from "../../components/shared/GridPosts"
-import ListPosts from "../../components/shared/ListPosts"
+import GridPosts from "../../components/posts/GridPosts"
+import ListPosts from "../../components/posts/ListPosts"
 
 export default function Movies({ sortBy, load, setLoad, viewGrid }) {
    // const [movies, setMovies] = useState([])
