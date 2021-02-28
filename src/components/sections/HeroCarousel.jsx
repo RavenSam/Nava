@@ -1,5 +1,5 @@
 import { Flex, Spacer, Box, Text, Heading, HStack, Button, Container } from "@chakra-ui/react"
-import { Star, StarOutline, PlayOutline } from "heroIcons-react"
+import { Star, StarOutline, PlayOutline } from "heroicons-react"
 import Genres from "../shared/Genres"
 import Rating from "react-rating"
 
