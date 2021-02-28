@@ -12,10 +12,10 @@ export default function GridPosts({ posts = [] }) {
          {posts.map((post) => (
             <Link href="#">
                <a className="card">
-                  <Box key={post.id} {...postProps().card}>
-                     <Image {...postProps().img} src={imgUrls(post.poster_path)} />
+                  <Box key={post.id} {...postProps.card}>
+                     <Image {...postProps.img} src={imgUrls(post.poster_path)} />
 
-                     <Flex {...postProps().cardContent}>
+                     <Flex {...postProps.cardContent}>
                         <Heading as="h2" fontSize={[".9rem", null, "1rem"]} mb="2">
                            {post.title}
                         </Heading>
@@ -38,7 +38,7 @@ export default function GridPosts({ posts = [] }) {
 }
 
 // Chakra props style
-const postProps = () => {
+const postProps = (() => {
    const card = {
       rounded: "lg",
       overflow: "hidden",
@@ -92,4 +92,4 @@ const postProps = () => {
    }
 
    return { card, img, cardContent }
-}
+})()

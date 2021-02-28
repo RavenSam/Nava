@@ -23,3 +23,7 @@ img {
 .alice-carousel__stage-item span {
    line-height: 0;
 }
+
+/* #sliderPosts .alice-carousel__stage-item {
+   width: fit-content !important;
+} */

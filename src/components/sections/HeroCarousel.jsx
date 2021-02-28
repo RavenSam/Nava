@@ -1,8 +1,7 @@
-import { Flex, Spacer, Box, Text, Heading, HStack, Button, Container } from "@chakra-ui/react"
+import { Box, Text, Heading, HStack, Button, Container } from "@chakra-ui/react"
 import { Star, StarOutline, PlayOutline } from "heroicons-react"
 import Genres from "../shared/Genres"
 import Rating from "react-rating"
-
 import Slider from "../shared/Slider"
 import imgUrl from "../../utils/imgUrl"
 
@@ -10,11 +9,11 @@ export default function HeroCarousel({ posts = [] }) {
    console.log(posts[0])
 
    return (
-      <Box {...heroProps().container}>
-         <Slider sliderProps={sliderProps()}>
+      <Box {...heroProps.container}>
+         <Slider sliderProps={sliderProps}>
             {posts.map((post) => (
-               <Box key={post.id} bg={`url(${imgUrl(post.backdrop_path, "original")})`} {...heroProps().item}>
-                  <Container {...heroProps().content}>
+               <Box key={post.id} bg={`url(${imgUrl(post.backdrop_path, "original")})`} {...heroProps.item}>
+                  <Container {...heroProps.content}>
                      <Genres genreIds={post.genre_ids} />
 
                      <Heading as="h2" fontSize={["25px", "40px", null, "60px"]}>
@@ -46,7 +45,7 @@ export default function HeroCarousel({ posts = [] }) {
    )
 }
 
-const sliderProps = () => {
+const sliderProps = (() => {
    return {
       animationType: "fadeout",
       animationDuration: 2000,
@@ -57,12 +56,10 @@ const sliderProps = () => {
       autoPlay: true,
       autoPlayInterval: 8000,
    }
-}
+})()
 
 // Chakra props style
-const heroProps = () => {
-   const container = {}
-
+const heroProps = (() => {
    const item = {
       h: ["45vh", "60vh", "88vh"],
       w: "100%",
@@ -95,5 +92,5 @@ const heroProps = () => {
       p: 0,
    }
 
-   return { container, item, content }
-}
+   return { item, content }
+})()

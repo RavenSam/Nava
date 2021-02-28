@@ -15,10 +15,10 @@ export default function ListPosts({ posts = [] }) {
          {posts.map((post) => (
             <Link href="#">
                <a className="card">
-                  <Flex key={post.id} {...postProps().card}>
-                     <Image {...postProps().img} src={imgUrls(post.poster_path)} />
+                  <Flex key={post.id} {...postProps.card}>
+                     <Image {...postProps.img} src={imgUrls(post.poster_path)} />
 
-                     <Box {...postProps().content}>
+                     <Box {...postProps.content}>
                         <Heading as="h2" fontSize={[".9rem", null, "1rem"]} mb="2">
                            {post.title}
                         </Heading>
@@ -33,7 +33,7 @@ export default function ListPosts({ posts = [] }) {
                            {post.release_date}
                         </Text>
 
-                        <HStack color="green.500">
+                        <HStack color="primary.500">
                            <Rating
                               initialRating={post.vote_average}
                               stop={10}
@@ -58,9 +58,9 @@ export default function ListPosts({ posts = [] }) {
 }
 
 // Chakra props style
-const postProps = () => {
+const postProps = (() => {
    const card = {
-      borderRadius: "md",
+      borderRadius: "lg",
       overflow: "hidden",
       boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
       h: ["140px", "180px"],
@@ -77,4 +77,4 @@ const postProps = () => {
    }
 
    return { card, img, content }
-}
+})()
