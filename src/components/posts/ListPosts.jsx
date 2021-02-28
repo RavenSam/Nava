@@ -4,7 +4,7 @@ import imgUrls from "../../utils/imgUrl"
 import excerpt from "../../utils/excerpt"
 import { ViewIcon, TimeIcon } from "@chakra-ui/icons"
 import Rating from "react-rating"
-import { Star, StarOutline } from "heroIcons-react"
+import { Star, StarOutline } from "heroicons-react"
 
 export default function ListPosts({ posts = [] }) {
    // Return if Posts is empty
