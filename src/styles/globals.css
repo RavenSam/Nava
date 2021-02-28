@@ -14,3 +14,12 @@ a {
 * {
    box-sizing: border-box;
 }
+
+svg,
+img {
+   display: block;
+}
+
+.alice-carousel__stage-item span {
+   line-height: 0;
+}

@@ -45,7 +45,7 @@ const postProps = () => {
       h: "100%",
       bg: "primary.200",
       minHeight: "200px",
-      boxShadow: "md",
+      boxShadow: "rgba(0, 0, 0, 0.3) 0px 3px 8px",
       pos: "relative",
 
       _after: {

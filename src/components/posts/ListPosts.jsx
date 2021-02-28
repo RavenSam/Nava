@@ -1,8 +1,10 @@
-import { Heading, Text, SimpleGrid, Box, Image, Flex } from "@chakra-ui/react"
+import { Heading, Text, SimpleGrid, Box, Image, Flex, HStack } from "@chakra-ui/react"
 import Link from "next/link"
 import imgUrls from "../../utils/imgUrl"
 import excerpt from "../../utils/excerpt"
-import { ViewIcon, TimeIcon, ArrowUpDownIcon } from "@chakra-ui/icons"
+import { ViewIcon, TimeIcon } from "@chakra-ui/icons"
+import Rating from "react-rating"
+import { Star, StarOutline } from "heroIcons-react"
 
 export default function ListPosts({ posts = [] }) {
    // Return if Posts is empty
@@ -25,14 +27,22 @@ export default function ListPosts({ posts = [] }) {
                            <ViewIcon mr="4" w={4} h={4} />
                            {post.popularity}
                         </Text>
+
                         <Text as="p" fontSize="13px" mb="1" fontWeight="500">
                            <TimeIcon mr="4" w={4} h={4} />
                            {post.release_date}
                         </Text>
-                        <Text as="p" fontSize="13px" mb="1" fontWeight="500">
-                           <ArrowUpDownIcon mr="4" w={4} h={4} />
-                           {`${post.vote_average}/10`}
-                        </Text>
+
+                        <HStack color="green.500">
+                           <Rating
+                              initialRating={post.vote_average}
+                              stop={10}
+                              step={2}
+                              emptySymbol={<StarOutline />}
+                              fullSymbol={<Star />}
+                              readonly
+                           />
+                        </HStack>
 
                         <Text d={["none", "block"]} as="p" fontSize="13px" fontWeight="500">
                            <strong>Synopsis: </strong>
@@ -52,7 +62,7 @@ const postProps = () => {
    const card = {
       borderRadius: "md",
       overflow: "hidden",
-      boxShadow: "md",
+      boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
       h: ["140px", "180px"],
    }
 
