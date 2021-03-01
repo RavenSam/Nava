@@ -20,7 +20,7 @@ export default function HeroCarousel({ posts = [] }) {
                         {post.title}
                      </Heading>
 
-                     <HStack color="orange.400" py={[".8rem"]}>
+                     <HStack color="White" py={[".8rem"]}>
                         <Rating
                            initialRating={post.vote_average}
                            stop={10}
@@ -29,9 +29,7 @@ export default function HeroCarousel({ posts = [] }) {
                            fullSymbol={<Star />}
                            readonly
                         />
-                        <Text as="span" color="#fff">
-                           {post.vote_average}/10
-                        </Text>
+                        <Text as="span">{post.vote_average}/10</Text>
                      </HStack>
 
                      <Button my="1" fontSize={["12px", "16px"]} leftIcon={<PlayOutline />}>
@@ -61,7 +59,7 @@ const sliderProps = (() => {
 // Chakra props style
 const heroProps = (() => {
    const item = {
-      h: ["45vh", "60vh", "88vh"],
+      h: ["45vh", "60vh", "90vh"],
       w: "100%",
       color: "white",
       className: "item",

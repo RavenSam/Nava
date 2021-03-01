@@ -14,7 +14,7 @@ export default function SliderPosts({ posts = [] }) {
 
          <Slider sliderProps={sliderProps}>
             {posts.map((post) => (
-               <Link href="#">
+               <Link key={post.id} href="#">
                   <a className="card">
                      <Box key={post.id} {...postProps.card}>
                         <Image {...postProps.img} src={imgUrls(post.poster_path)} />
@@ -48,7 +48,7 @@ const sliderProps = (function () {
       disableDotsControls: true,
       mouseTracking: true,
       responsive: {
-         0: { items: 1.35 },
+         0: { items: 1.3 },
          425: { items: 1.8 },
          600: { items: 2.5 },
          740: { items: 3 },
@@ -64,7 +64,7 @@ const postProps = (() => {
       rounded: "lg",
       overflow: "hidden",
       h: "350px",
-      w: "220px",
+      w: "230px",
       mx: ["auto"],
       bg: "primary.200",
       minHeight: "200px",

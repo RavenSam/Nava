@@ -4,15 +4,16 @@ import HeroCarousel from "../components/sections/HeroCarousel"
 import SliderPosts from "../components/posts/SliderPosts"
 
 // Dummy data
-import { results } from "../../movie.json"
+import { results as movies } from "../../movie.json"
 
 export default function Home() {
+   console.log(movies[0])
    return (
       <>
-         <HeroCarousel posts={results.slice(0, 5)} />
+         <HeroCarousel posts={movies.slice(0, 5)} />
 
          <Box py="5rem">
-            <SliderPosts posts={results.slice(0, 5)} />
+            <SliderPosts posts={movies.slice(0, 5)} />
          </Box>
       </>
    )

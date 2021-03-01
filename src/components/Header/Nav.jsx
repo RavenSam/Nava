@@ -1,4 +1,4 @@
-import React from "react"
+import { useRouter } from "next/router"
 import { Box, Center, Text, Button } from "@chakra-ui/react"
 
 import NextLink from "next/link"
@@ -10,6 +10,10 @@ import DrawerNav from "./DrawerNav"
 import { linkPages } from "../../config/linkPages"
 
 export default function Nav() {
+   const path = useRouter().pathname
+
+   const current = (href) => path === href && { color: "primary.400" }
+
    return (
       <>
          <Center>
@@ -17,7 +21,14 @@ export default function Nav() {
                {linkPages.map((page) => (
                   <NextLink key={page.name} href={page.href}>
                      <a>
-                        <Text key={page.name} p="3" fontWeight="600" fontSize=".9rem" _hover={{ color: "primary.400" }}>
+                        <Text
+                           key={page.name}
+                           p="3"
+                           {...current(page.href)}
+                           fontWeight="600"
+                           fontSize=".9rem"
+                           _hover={{ color: "primary.400" }}
+                        >
                            {page.name}
                         </Text>
                      </a>

@@ -7,3 +7,11 @@ export default function Loading() {
       </Flex>
    )
 }
+
+export function LoadingPage() {
+   return (
+      <Flex textAlign="center" h="90vh" alignItems="center" justifyContent="center" w="100%">
+         <Spinner size="lg" color="primary.400" />
+      </Flex>
+   )
+}
