@@ -8,7 +8,7 @@ export default function Banner({ image, alt }) {
 
    const bannerProps = {
       w: "100%",
-      minH: "200px",
+      minH: "180px",
       maxH: "120vh",
       pos: "relative",
 
@@ -16,11 +16,11 @@ export default function Banner({ image, alt }) {
          content: "''",
          position: "absolute",
          left: 0,
-         h: "40vh",
+         h: { base: "80%" /*  lg: "50vh" */ },
          w: "100%",
          bottom: 0,
          zIndex: 2,
-         bgGradient: `linear(to-t, ${overColor}, transparent)`,
+         bgGradient: `linear(to-t, ${overColor}  ,transparent)`,
       },
    }
 

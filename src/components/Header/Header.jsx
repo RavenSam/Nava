@@ -31,7 +31,13 @@ export default function Header() {
                <InputGroup size="md" mx="4" maxW="2xs" display={{ base: "none", md: "flex" }}>
                   <Input placeholder="Search" borderRadius="20px" _focus={{ borderColor: "primary.400" }} />
                   <InputRightElement>
-                     <IconButton size="md" icon={<SearchIcon />} aria-label="Search" borderRadius="0 20px 20px 0" />
+                     <IconButton
+                        minW="3rem"
+                        size="md"
+                        icon={<SearchIcon />}
+                        aria-label="Search"
+                        borderRadius="0 20px 20px 0"
+                     />
                   </InputRightElement>
                </InputGroup>
 

@@ -14,7 +14,7 @@ export default function SliderPosts({ posts = [] }) {
 
          <Slider sliderProps={sliderProps}>
             {posts.map((post) => (
-               <Link key={post.id} href="#">
+               <Link key={post.id} href={`/watch/s/${post.id}`}>
                   <a className="card">
                      <Box key={post.id} {...postProps.card}>
                         <Image {...postProps.img} src={imgUrls(post.poster_path)} />

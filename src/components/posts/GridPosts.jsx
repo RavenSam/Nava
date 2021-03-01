@@ -10,7 +10,7 @@ export default function GridPosts({ posts = [] }) {
    return (
       <SimpleGrid columns={[2, 3, 3, 4]} spacing={[".5rem", "1rem"]}>
          {posts.map((post) => (
-            <Link href="#">
+            <Link href={`/watch/s/${post.id}`}>
                <a className="card">
                   <Box key={post.id} {...postProps.card}>
                      <Image {...postProps.img} src={imgUrls(post.poster_path)} />

@@ -1,4 +1,4 @@
-export const indigo = {
+export const indigoC = {
    100: "#8c98d4",
    200: "#7987cd",
    300: "#6675c6",
@@ -10,7 +10,7 @@ export const indigo = {
    900: "#26326e",
 }
 
-export const purple = {
+export const purpleC = {
    100: "#a169da",
    200: "#9453d5",
    300: "#863ecf",

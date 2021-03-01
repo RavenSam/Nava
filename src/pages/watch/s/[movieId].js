@@ -13,7 +13,7 @@ export default function MovieDetail({ movie }) {
       <>
          <Banner image={imgUrl(movie.backdrop_path, "original")} alt={movie.name} />
 
-         <Box mt="-10vh" zIndex="2" pos="relative">
+         <Box mt={{ base: "-15vh", md: "-20vh", lg: "-40vh" }} zIndex="2" pos="relative">
             <Details movie={movie} />
          </Box>
       </>
