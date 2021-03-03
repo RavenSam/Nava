@@ -16,7 +16,7 @@ export default function SliderPosts({ posts = [] }) {
             {posts.map((post) => (
                <Link key={post.id} href={`/watch/s/${post.id}`}>
                   <a className="card">
-                     <Box key={post.id} {...postProps.card}>
+                     <Box {...postProps.card}>
                         <Image {...postProps.img} src={imgUrls(post.poster_path)} />
 
                         <Flex {...postProps.cardContent}>
@@ -63,9 +63,10 @@ const postProps = (() => {
    const card = {
       rounded: "lg",
       overflow: "hidden",
-      h: "350px",
-      w: "230px",
-      mx: ["auto"],
+      h: "360px",
+      minW: "220px",
+      maxW: "250px",
+      mx: [".5rem"],
       bg: "primary.200",
       minHeight: "200px",
       boxShadow: "rgba(0, 0, 0, 0.3) 0px 3px 8px",

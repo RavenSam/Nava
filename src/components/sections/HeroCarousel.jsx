@@ -1,6 +1,7 @@
 import { Box, Text, Heading, HStack, Button, Container } from "@chakra-ui/react"
 import { Star, StarOutline, PlayOutline } from "heroicons-react"
 import Genres from "../shared/Genres"
+import Link from "next/link"
 import Rating from "react-rating"
 import Slider from "../shared/Slider"
 import imgUrl from "../../utils/imgUrl"
@@ -33,7 +34,9 @@ export default function HeroCarousel({ posts = [] }) {
                      </HStack>
 
                      <Button my="1" fontSize={["12px", "16px"]} leftIcon={<PlayOutline />}>
-                        Watch
+                        <Link key={post.id} href={`/watch/s/${post.id}`}>
+                           <a className="card">Watch</a>
+                        </Link>
                      </Button>
                   </Container>
                </Box>
