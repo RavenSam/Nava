@@ -4,6 +4,7 @@ import Header from "../components/Header/Header"
 import { Box, Grid, GridItem } from "@chakra-ui/react"
 import Menu from "../components/Menu"
 import Filter from "../components/Filter"
+import Footer from "../components/Footer/Footer"
 
 export default function MoviesLayout({ children }) {
    const [sortBy, setSortBy] = useState("release_date.desc")
@@ -13,7 +14,7 @@ export default function MoviesLayout({ children }) {
    const customProps = { sortBy, setSortBy, load, setLoad, viewGrid }
 
    return (
-      <Box>
+      <>
          <Header />
 
          <Filter sortBy={sortBy} setSortBy={setSortBy} viewGrid={viewGrid} setViewGrid={setViewGrid} />
@@ -27,6 +28,8 @@ export default function MoviesLayout({ children }) {
                {React.cloneElement(children, customProps)}
             </GridItem>
          </Grid>
-      </Box>
+
+         <Footer />
+      </>
    )
 }

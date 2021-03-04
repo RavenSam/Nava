@@ -12,7 +12,6 @@ import Details from "../../../components/sections/Details"
 export default function MovieDetail({ movie }) {
    if (!movie) return <LoadingPage />
 
-   console.log(movie)
    return (
       <>
          <Head>
@@ -35,15 +34,13 @@ export const getStaticProps = async ({ params }) => {
 
       const { data } = await axios(req)
 
-      console.log(req)
-
       return {
          props: { movie: data },
       }
    } catch (err) {
       console.log(err.message)
 
-      if (err.response.status === 404) {
+      if (err.response && err.response.status === 404) {
          return {
             notFound: true,
          }

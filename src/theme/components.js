@@ -2,7 +2,7 @@ export const Button = {
    // The styles all button have in common
    baseStyle: {
       fontWeight: "bold",
-      textTransform: "uppercase",
+      textTransform: "capitalize",
       letterSpacing: "1.5px",
       border: "1px solid transparent",
       lineHeight: "normal",
