@@ -7,7 +7,7 @@ import Filter from "../components/Filter"
 import Footer from "../components/Footer/Footer"
 
 export default function MoviesLayout({ children }) {
-   const [sortBy, setSortBy] = useState("release_date.desc")
+   const [sortBy, setSortBy] = useState("popular")
    const [load, setLoad] = useState(false)
    const [viewGrid, setViewGrid] = useState(true)
 

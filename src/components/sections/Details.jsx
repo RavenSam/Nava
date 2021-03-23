@@ -1,5 +1,4 @@
 import { Box, Heading, Container, Flex, Spacer, Divider, Grid, GridItem } from "@chakra-ui/react"
-
 import DetialsRightPart from "../parts/DetialsRightPart"
 import DetialsLeftPart from "../parts/DetialsLeftPart"
 import Similar from "../shared/Similar"

@@ -1,5 +1,6 @@
-import { Heading, Text, SimpleGrid, Box, Image, Flex } from "@chakra-ui/react"
+import { Heading, Text, SimpleGrid, Box, Flex } from "@chakra-ui/react"
 import Link from "next/link"
+import NextImage from "next/image"
 import imgUrls from "../../utils/imgUrl"
 import { ViewIcon, TimeIcon } from "@chakra-ui/icons"
 
@@ -10,10 +11,16 @@ export default function GridPosts({ posts = [] }) {
    return (
       <SimpleGrid columns={[2, 3, 3, 4]} spacing={[".5rem", "1rem"]}>
          {posts.map((post) => (
-            <Link href={`/watch/s/${post.id}`}>
+            <Link key={post.id} href={`/watch/s/${post.id}`}>
                <a className="card">
                   <Box key={post.id} {...postProps.card}>
-                     <Image {...postProps.img} src={imgUrls(post.poster_path)} />
+                     <NextImage
+                        sizes="400px"
+                        src={imgUrls(post.poster_path, "original")}
+                        width="250px"
+                        height="400px"
+                        alt={post.title}
+                     />
 
                      <Flex {...postProps.cardContent}>
                         <Heading as="h2" fontSize={[".9rem", null, "1rem"]} mb="2">
@@ -43,7 +50,6 @@ const postProps = (() => {
       rounded: "lg",
       overflow: "hidden",
       h: "100%",
-      bg: "primary.200",
       minHeight: "200px",
       boxShadow: "rgba(0, 0, 0, 0.3) 0px 3px 8px",
       pos: "relative",
@@ -67,11 +73,6 @@ const postProps = (() => {
       },
    }
 
-   const img = {
-      minWidth: "100%",
-      minHeight: "100%",
-   }
-
    const cardContent = {
       pos: "absolute",
       p: ".8rem",
@@ -91,5 +92,5 @@ const postProps = (() => {
       },
    }
 
-   return { card, img, cardContent }
+   return { card, cardContent }
 })()

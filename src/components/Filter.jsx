@@ -57,10 +57,10 @@ export default function Filter({ sortBy, setSortBy, viewGrid, setViewGrid }) {
                   Sort By
                </MenuButton>
 
-               <MenuList>
+               <MenuList zIndex="5">
                   <MenuOptionGroup onChange={handleChange} defaultValue={sortBy} title="Sort By" type="radio">
-                     <MenuItemOption value="release_date.desc">New</MenuItemOption>
-                     <MenuItemOption value="popularity.desc">Popular</MenuItemOption>
+                     <MenuItemOption value="popular">Popular</MenuItemOption>
+                     <MenuItemOption value="top_rated">Top Rated</MenuItemOption>
                   </MenuOptionGroup>
                </MenuList>
             </Menu>

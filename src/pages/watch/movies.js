@@ -4,28 +4,29 @@ import axios from "axios"
 import Loading from "../../components/shared/Loading"
 
 // Dummy data
-import { results as movies } from "../../../movie.json"
+// import { results as movies } from "../../../movie.json"
+// Components
 import GridPosts from "../../components/posts/GridPosts"
 import ListPosts from "../../components/posts/ListPosts"
 
 export default function Movies({ sortBy, load, setLoad, viewGrid }) {
-   // const [movies, setMovies] = useState([])
+   const [movies, setMovies] = useState([])
 
-   // useEffect(async () => {
-   //    try {
-   //       const key = process.env.NEXT_PUBLIC_TMDB_API_KEY
-   //       const req = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&year=2020&language=en-US&sort_by=${sortBy}&page=1`
+   useEffect(async () => {
+      try {
+         const key = process.env.NEXT_PUBLIC_TMDB_API_KEY
+         const req = `https://api.themoviedb.org/3/movie/${sortBy}?api_key=${key}&language=en-US`
 
-   //       setLoad(true)
-   //       const { data } = await axios(req)
+         setLoad(true)
+         const { data } = await axios(req)
 
-   //       setMovies(data.results)
-   //       setLoad(false)
-   //    } catch (err) {
-   //       setLoad(false)
-   //       console.log(err)
-   //    }
-   // }, [sortBy])
+         setMovies(data.results)
+         setLoad(false)
+      } catch (err) {
+         setLoad(false)
+         console.log(err)
+      }
+   }, [sortBy])
 
    if (load) return <Loading />
 

@@ -1,5 +1,6 @@
 import { Heading, Text, SimpleGrid, Box, Image, Flex, HStack } from "@chakra-ui/react"
 import Link from "next/link"
+import NextImage from "next/image"
 import imgUrls from "../../utils/imgUrl"
 import excerpt from "../../utils/excerpt"
 import { ViewIcon, TimeIcon } from "@chakra-ui/icons"
@@ -13,11 +14,18 @@ export default function ListPosts({ posts = [] }) {
    return (
       <SimpleGrid columns={[1, null, null, null, 2]} spacing={[".5rem", "1rem"]}>
          {posts.map((post) => (
-            <Link href="#">
+            <Link key={post.id} href={`/watch/s/${post.id}`}>
                <a className="card">
                   <Flex key={post.id} {...postProps.card}>
-                     <Image {...postProps.img} src={imgUrls(post.poster_path)} />
-
+                     <Box {...postProps.img}>
+                        <NextImage
+                           src={imgUrls(post.poster_path, "original")}
+                           width="150px"
+                           height="180px"
+                           sizes="180px"
+                           alt={post.title}
+                        />
+                     </Box>
                      <Box {...postProps.content}>
                         <Heading as="h2" fontSize={[".9rem", null, "1rem"]} mb="2">
                            {post.title}

@@ -6,9 +6,6 @@ import { LoadingPage } from "../../../components/shared/Loading"
 import Banner from "../../../components/sections/Banner"
 import Details from "../../../components/sections/Details"
 
-// Dummy data
-// import movie from "../../../../1.json"
-
 export default function MovieDetail({ movie }) {
    if (!movie) return <LoadingPage />
 

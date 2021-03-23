@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { Button, useToast, Alert, Image } from "@chakra-ui/react"
+import NextImage from "next/image"
+import { Button, useToast, Box } from "@chakra-ui/react"
 import { HeartOutline, Heart, ExternalLinkOutline } from "heroicons-react"
 import Link from "next/link"
 import imgUrl from "../../utils/imgUrl"
@@ -11,13 +12,10 @@ export default function DetialsLeftPart({ movie }) {
 
    const handleLike = () => {
       toast({
-         position: "bottom-left",
+         position: "top-left",
          duration: 4000,
-         render: () => (
-            <Alert colorScheme="primary" variant="left-accent" fontSize=".9rem">
-               {liked ? "  Removed From Liked Movies." : "  Added To Liked Movies."}
-            </Alert>
-         ),
+         description: liked ? "Removed From Liked Movies." : "  Added To Liked Movies.",
+         status: "success",
       })
 
       setLiked(!liked)
@@ -25,7 +23,15 @@ export default function DetialsLeftPart({ movie }) {
 
    return (
       <>
-         <Image src={imgUrl(movie.poster_path, "original")} borderRadius="lg" />
+         <Box borderRadius="lg" overflow="hidden">
+            <NextImage
+               width="240px"
+               height="360px"
+               sizes="360px"
+               alt={movie.title}
+               src={imgUrl(movie.poster_path, "original")}
+            />
+         </Box>
 
          <Link href="/watch/movies">
             <a>

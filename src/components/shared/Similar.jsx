@@ -11,7 +11,7 @@ import { ChevronDownOutline, ChevronUpOutline } from "heroicons-react"
 export default function Similar({ id }) {
    const [similar, setSimilar] = useState([])
    const [load, setLoad] = useState(false)
-   const [show, setShow] = useState(8)
+   const [show, setShow] = useState(4)
 
    useEffect(async () => {
       try {
@@ -31,7 +31,7 @@ export default function Similar({ id }) {
 
    if (load) return <LoadingPage />
 
-   const handleShow = () => (show < similar.length ? setShow(show + 4) : setShow(8))
+   const handleShow = () => (show < similar.length ? setShow(show + 4) : setShow(4))
 
    return (
       similar.length > 0 && (

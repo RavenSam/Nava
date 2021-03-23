@@ -7,8 +7,6 @@ import Slider from "../shared/Slider"
 import imgUrl from "../../utils/imgUrl"
 
 export default function HeroCarousel({ posts = [] }) {
-   console.log(posts[0])
-
    return (
       <Box {...heroProps.container}>
          <Slider sliderProps={sliderProps}>
